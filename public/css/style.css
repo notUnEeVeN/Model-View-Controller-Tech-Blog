@@ -34,3 +34,7 @@ nav, nav a {
   color: #065b83;
   text-decoration: underline;
 }
+
+button:hover {
+  cursor: pointer;
+}
