@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             if (response.ok) {
-                // location.reload();
+                location.reload();
             } else {
                 alert('Failed to post comment');
             }

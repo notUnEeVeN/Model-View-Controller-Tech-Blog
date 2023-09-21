@@ -16,7 +16,7 @@
         <a style="color: #d9ead3;" href="/">The Tech Blog</a>
       </h1>
       <nav>
-        <a style="color: #d9ead3;" href="/">Home</a> | <!-- Added Home button here -->
+        <a style="color: #d9ead3;" href="/">Home</a> | 
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a style="color: #d9ead3;" href="/profile">Dashboard</a> |
@@ -30,6 +30,11 @@
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
+    <div id="loginPromptModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; padding: 20px; background-color: white; border: 1px solid gray;">
+    <p>You should log in to be able to create, delete, or update posts!</p>
+    <button onclick="closeLoginPrompt()">Close</button>
+    </div>
+
     <footer>
       
     </footer>
@@ -39,6 +44,8 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
+  <script src="/js/userprompt.js"></script>
 </body>
 
 </html>

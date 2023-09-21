@@ -53,7 +53,6 @@ document.querySelectorAll('.btn-edit').forEach(button => {
 // Handle edit form submission
 document.querySelectorAll('.edit-project-form').forEach(form => {
   form.addEventListener('submit', async (event) => {
-    // ...[code remains unchanged]
     event.preventDefault();
     const projectId = form.getAttribute('data-id');
     const name = form.querySelector('input[name="project-name-edit"]').value.trim();
@@ -61,7 +60,7 @@ document.querySelectorAll('.edit-project-form').forEach(form => {
 
     if (name && description) {
       const response = await fetch(`/api/projects/${projectId}`, {
-        method: 'PUT', // or 'POST' if that's what your backend expects for updates
+        method: 'PUT', 
         body: JSON.stringify({ name, description }),
         headers: { 'Content-Type': 'application/json' }
       });
