@@ -1,5 +1,6 @@
 var loggedIn = true; 
 
+// Function to log the user out via an API endpoint
 const logout = async () => {
   const response = await fetch('/api/users/logout', {
     method: 'POST',

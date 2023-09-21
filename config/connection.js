@@ -1,3 +1,4 @@
+// Import necessary modules
 const Sequelize = require('sequelize');
 require('dotenv').config();
 

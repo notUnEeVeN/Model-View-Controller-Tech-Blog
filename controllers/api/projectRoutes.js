@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Project } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Endpoint to create a new project
 router.post('/', withAuth, async (req, res) => {
   try {
     const newProject = await Project.create({
@@ -15,6 +16,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// Endpoint to delete a specific project by ID
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const projectData = await Project.destroy({
@@ -35,6 +37,7 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+// Endpoint to update a specific project by ID
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const projectData = await Project.update(
